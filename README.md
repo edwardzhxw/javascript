@@ -714,7 +714,7 @@
     }
     ```
 
-  - [9.2](#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
+  - (#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
     // bad
@@ -767,7 +767,7 @@
     ```
 
   <a name="comments--todo"></a>
-  - [9.4](#comments--todo) Use `// TODO:` to annotate solutions to problems.
+  - (#comments--todo) Use `// TODO:` to annotate solutions to problems.
 
     ```javascript
     function Calculator() {
@@ -1222,11 +1222,11 @@
 
 ## Type Casting & Coercion
 
-  <a name="coercion--explicit"></a><a name="13.1"></a>
-  - [13.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
+  <a name="coercion--explicit"></a><a name="14.1"></a>
+  - [14.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
 
-  <a name="coercion--strings"></a><a name="13.2"></a>
-  - [13.2](#coercion--strings)  Strings:
+  <a name="coercion--strings"></a><a name="14.2"></a>
+  - [14.2](#coercion--strings)  Strings:
 
     ```javascript
     // => this.reviewScore = 9;
@@ -1241,8 +1241,8 @@
     var totalScore = String(this.reviewScore);
     ```
 
-  <a name="coercion--numbers"></a><a name="13.3"></a>
-  - [13.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](http://eslint.org/docs/rules/radix)
+  <a name="coercion--numbers"></a><a name="14.3"></a>
+  - [14.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](http://eslint.org/docs/rules/radix)
 
     ```javascript
     var inputValue = '4';
@@ -1286,8 +1286,8 @@
 
 ## Naming Conventions
 
-  <a name="naming--descriptive"></a><a name="14.1"></a>
-  - [14.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
+  <a name="naming--descriptive"></a><a name="15.1"></a>
+  - [15.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
 
     ```javascript
     // bad
@@ -1301,8 +1301,8 @@
     }
     ```
 
-  <a name="naming--camelCase"></a><a name="14.2"></a>
-  - [14.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
+  <a name="naming--camelCase"></a><a name="15.2"></a>
+  - [15.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
 
     ```javascript
     // bad
@@ -1315,8 +1315,8 @@
     function thisIsMyFunction() {}
     ```
 
-  <a name="naming--PascalCase"></a><a name="14.3"></a>
-  - [14.3](#naming--PascalCase) Use PascalCase only when naming constructors or classes. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
+  <a name="naming--PascalCase"></a><a name="15.3"></a>
+  - [15.3](#naming--PascalCase) Use PascalCase only when naming constructors or classes. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
 
     ```javascript
     // bad
@@ -1338,8 +1338,8 @@
     });
     ```
 
-  <a name="naming--leading-underscore"></a><a name="14.4"></a>
-  - [14.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
+  <a name="naming--leading-underscore"></a><a name="15.4"></a>
+  - [15.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
 
     > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
 
