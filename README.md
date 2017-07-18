@@ -1,7 +1,6 @@
 # JavaScript Style Guide
 
 ## <a name="table-of-contents">目录</a>
-
   1. [对象](#objects)
   1. [数组](#arrays)
   1. [字符串](#strings)
@@ -768,7 +767,7 @@
 
 ## 空格
 
-  <a name="whitespace--spaces"></a><a name="10.1"></a>
+  <a name="whitespace"></a><a name="10.1"></a>
   - [10.1](#whitespace--spaces) 两个空格为缩进. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
 
     ```javascript
