@@ -69,6 +69,7 @@
 
 ## 数组
 
+  <a name="arrays"></a>
   <a name="arrays--literals"></a><a name="2.1"></a>
   - [2.1](#arrays--literals) 使用直接量创建数组。 eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
 
@@ -174,6 +175,7 @@
 
 ## 字符串
 
+  <a name="strings"></a>
   <a name="strings--quotes"></a><a name="3.1"></a>
   - [3.1](#strings--quotes) 字符串使用单引号`''`。 eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
 
@@ -224,6 +226,7 @@
 
 ## 函数
 
+  <a name="functions"></a>
   <a name="functions--declarations"></a><a name="4.1"></a>
   - [4.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
 
@@ -355,6 +358,7 @@
 
 ## 属性
 
+  <a name="properties"></a>
   <a name="properties--dot"></a><a name="5.1"></a><a name="5.1"></a>
   - [5.1](#properties--dot) 使用逗号来访问属性。 eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
 
@@ -375,6 +379,7 @@
 
 ## 比较运算符 & 等号
 
+  <a name="comparison-operators--equality"></a>
   <a name="comparison--eqeqeq"></a><a name="6.1"></a>
   - [6.1](#comparison--eqeqeq) 优先使用 `===` 和 `!==`, 而不是 `==` 和 `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
 
@@ -516,6 +521,7 @@
 
 ## 块
 
+  <a name="blocks"></a>
   <a name="blocks--braces"></a><a name="7.1"></a>
   - [7.1](#blocks--braces) 使用大括号包裹所有的多行代码块。
 
@@ -623,6 +629,7 @@
 
 ## Comments
 
+  <a name="comments"></a>
   <a name="comments--multiline"></a><a name="9.1"></a>
   - [9.1](#comments--multiline) 多行注释优先使用 `/** ... */`。
 
@@ -1061,6 +1068,7 @@
 
 ## 逗号
 
+<a name="commas"></a>
 <a name="commas--leading-trailing"></a><a name="12.1"></a>
   - [12.1](#commas--leading-trailing) 行首不需要逗号。 eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html) jscs: [`requireCommaBeforeLineBreak`](http://jscs.info/rule/requireCommaBeforeLineBreak)
 
@@ -1100,6 +1108,7 @@
 
 ## 分号
 
+  <a name="semicolons"></a>
   <a name="semicolons--required"></a><a name="13.1"></a>
   - [13.1](#semicolons--required) 使用分号。 eslint: [`semi`](http://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
 
