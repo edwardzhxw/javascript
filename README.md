@@ -1,12 +1,12 @@
 # JavaScript Style Guide
 
-## Table of Contents
+## <a name="table-of-contents">目录</a>
+
   1. [对象](#objects)
   1. [数组](#arrays)
   1. [字符串](#strings)
   1. [函数](#functions)
   1. [属性](#properties)
-  1. [变量](#variables)
   1. [比较运算符 & 等号](#comparison-operators--equality)
   1. [块](#blocks)
   1. [控制语句](#control-statements)
@@ -51,9 +51,7 @@
     ```
 
   <a name="objects--prototype-builtins"><a name="1.3"></a>
-  - [1.3](#objects--prototype-builtins) Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`.
-
-    > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
+  - [1.3](#objects--prototype-builtins) 不要直接调用`Object.prototype`的方法, 比如`hasOwnProperty`, `propertyIsEnumerable`和`isPrototypeOf`。
 
     ```javascript
     // bad
@@ -69,7 +67,7 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Arrays
+## 数组
 
   <a name="arrays--literals"></a><a name="2.1"></a>
   - [2.1](#arrays--literals) 使用直接量创建数组。 eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
@@ -83,7 +81,7 @@
     ```
 
   <a name="arrays--push"></a><a name="2.2"></a>
-  - [2.2](#arrays--push) Use [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 向数组增加元素时使用 Array#push 来替代直接赋值。
+  - [2.2](#arrays--push) 使用 [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 向数组增加元素时使用 Array#push 来替代直接赋值。
 
     ```javascript
     var someStack = [];
@@ -174,10 +172,10 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Strings
+## 字符串
 
   <a name="strings--quotes"></a><a name="3.1"></a>
-  - [3.1](#strings--quotes) Use single quotes `''` for strings. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
+  - [3.1](#strings--quotes) 字符串使用单引号`''`。 eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
 
     ```javascript
     // bad
@@ -188,9 +186,9 @@
     ```
 
   <a name="strings--line-length"></a><a name="3.2"></a>
-  - [3.2](#strings--line-length) Strings that cause the line to go over 100 characters should not be written across multiple lines using string concatenation.
+  - [3.2](#strings--line-length) 当字符串过长时，不要将字符串拆成多行。
 
-    > Why? Broken strings are painful to work with and make code less searchable.
+    > 多行的字符串不利于阅读，也不利于搜索。
 
     ```javascript
     // bad
@@ -209,12 +207,10 @@
     ```
 
   <a name="strings--eval"></a><a name="3.3"></a>
-  - [3.3](#strings--eval) Never use `eval()` on a string, it opens too many vulnerabilities. eslint: [`no-eval`](http://eslint.org/docs/rules/no-eval)
+  - [3.3](#strings--eval) 字符串不要使用`eval()`, 容易引起安全隐患。 eslint: [`no-eval`](http://eslint.org/docs/rules/no-eval)
 
   <a name="strings--escaping"><a name="3.4"></a>
-  - [3.4](#strings--escaping) Do not unnecessarily escape characters in strings. eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
-
-    > Why? Backslashes harm readability, thus they should only be present when necessary.
+  - [3.4](#strings--escaping) 不要做不必要的字符串转义。 eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
 
     ```javascript
     // bad
@@ -226,7 +222,7 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Functions
+## 函数
 
   <a name="functions--declarations"></a><a name="4.1"></a>
   - [4.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
@@ -263,10 +259,7 @@
     ```
 
   <a name="functions--in-blocks"></a><a name="4.3"></a>
-  - [4.3](#functions--in-blocks) Never declare a function in a non-function block (`if`, `while`, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears. eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
-
-  <a name="functions--note-on-blocks"></a><a name="4.4"></a>
-  - [4.4](#functions--note-on-blocks) **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262’s note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - [4.3](#functions--in-blocks) 不要在非函数的块中定义函数(`if`, `while`, 等等), 把函数分配给一个变量。 eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
 
     ```javascript
     // bad
@@ -286,7 +279,7 @@
     ```
 
   <a name="functions--arguments-shadow"></a><a name="4.5"></a>
-  - [4.5](#functions--arguments-shadow) Never name a parameter `arguments`. This will take precedence over the `arguments` object that is given to every function scope.
+  - [4.5](#functions--arguments-shadow) 不要使用`arguments`参数在函数定义中。
 
     ```javascript
     // bad
@@ -301,9 +294,7 @@
     ```
 
   <a name="functions--constructor"></a><a name="4.6"></a>
-  - [4.6](#functions--constructor) Never use the Function constructor to create a new function. eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
-
-    > Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.
+  - [4.6](#functions--constructor) 不要使用构造函数创建一个新函数。 eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
 
     ```javascript
     // bad
@@ -314,23 +305,21 @@
     ```
 
   <a name="functions--signature-spacing"></a><a name="4.7"></a>
-  - [4.7](#functions--signature-spacing) Spacing in a function signature. eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
-
-    > Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
+  - [4.7](#functions--signature-spacing) 函数定义中的空格 eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
 
     ```javascript
     // bad
-    const f = function(){};
-    const g = function (){};
-    const h = function() {};
+    var f = function(){};
+    var g = function (){};
+    var h = function() {};
 
     // good
-    const x = function () {};
-    const y = function a() {};
+    var x = function () {};
+    var y = function a() {};
     ```
 
   <a name="functions--signature-invocation-indentation"></a><a name="4.8"></a>
-  - [4.8](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item.
+  - [4.8](#functions--signature-invocation-indentation) 函数定义时多行参数时，每一个参数为一行，并且在末尾添加逗号。
 
     ```javascript
     // bad
@@ -364,50 +353,43 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Properties
+## 属性
 
   <a name="properties--dot"></a><a name="5.1"></a><a name="5.1"></a>
-  - [5.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
+  - [5.1](#properties--dot) 使用逗号来访问属性。 eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
 
     ```javascript
-    const luke = {
+    var luke = {
       jedi: true,
       age: 28,
     };
 
     // bad
-    const isJedi = luke['jedi'];
+    var isJedi = luke['jedi'];
 
     // good
-    const isJedi = luke.jedi;
+    var isJedi = luke.jedi;
     ```
 
 **[⬆ back to top](#table-of-contents)**
 
-## Comparison Operators & Equality
+## 比较运算符 & 等号
 
   <a name="comparison--eqeqeq"></a><a name="6.1"></a>
-  - [6.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
+  - [6.1](#comparison--eqeqeq) 优先使用 `===` 和 `!==`, 而不是 `==` 和 `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
 
   <a name="comparison--if"></a><a name="6.2"></a>
-  - [6.2](#comparison--if) Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
+  - [6.2](#comparison--if) 条件表达式例如 `if` 语句通过抽象方法 `ToBoolean` 强制计算它们的表达式并且总是遵守下面的规则:
 
-    - **Objects** evaluate to **true**
-    - **Undefined** evaluates to **false**
-    - **Null** evaluates to **false**
-    - **Booleans** evaluate to **the value of the boolean**
-    - **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    - **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
-
-    ```javascript
-    if ([0] && []) {
-      // true
-      // an array (even an empty one) is an object, objects will evaluate to true
-    }
-    ```
+    - **对象** 计算为 **true**
+    - **Undefined** 计算为 **false**
+    - **Null** 计算为 **false**
+    - **布尔值** 计算为 **布尔值**
+    - **数字** 如果是 **+0, -0, or NaN** 计算为 **false**, 其他则是 **true**
+    - **字符串** 如果是空字符串 `''` 计算为 **false**, 其他则是 **true**
 
   <a name="comparison--shortcuts"></a><a name="6.3"></a>
-  - [6.3](#comparison--shortcuts) Use shortcuts for booleans, but explicit comparisons for strings and numbers.
+  - [6.3](#comparison--shortcuts) 使用快捷方式, 除了字符串和数字。
 
     ```javascript
     // bad
@@ -441,11 +423,8 @@
     }
     ```
 
-  <a name="comparison--moreinfo"></a><a name="6.4"></a>
-  - [6.4](#comparison--moreinfo) For more information see [Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
-
-  <a name="comparison--switch-blocks"></a><a name="6.5"></a>
-  - [6.5](#comparison--switch-blocks) Use braces to create blocks in `case` and `default` clauses that contain lexical declarations.
+  <a name="comparison--switch-blocks"></a><a name="6.4"></a>
+  - [6.4](#comparison--switch-blocks) 在 `case` 和 `default` 中使用块。
 
     eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
 
@@ -492,8 +471,8 @@
     }
     ```
 
-  <a name="comparison--nested-ternaries"></a><a name="6.6"></a>
-  - [6.6](#comparison--nested-ternaries) Ternaries should not be nested and generally be single line expressions.
+  <a name="comparison--nested-ternaries"></a><a name="6.5"></a>
+  - [6.5](#comparison--nested-ternaries) 三元运算符? 和 : 与他们所负责的代码处于同一行。
 
     eslint rules: [`no-nested-ternary`](http://eslint.org/docs/rules/no-nested-ternary.html).
 
@@ -516,8 +495,8 @@
     var foo = maybe1 > maybe2 ? 'bar' : maybeNull;
     ```
 
-  <a name="comparison--unneeded-ternary"></a><a name="6.7"></a>
-  - [6.7](#comparison--unneeded-ternary) Avoid unneeded ternary statements.
+  <a name="comparison--unneeded-ternary"></a><a name="6.6"></a>
+  - [6.6](#comparison--unneeded-ternary) 避免不需要的三元运算符。
 
     eslint rules: [`no-unneeded-ternary`](http://eslint.org/docs/rules/no-unneeded-ternary.html).
 
@@ -535,10 +514,10 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Blocks
+## 块
 
   <a name="blocks--braces"></a><a name="7.1"></a>
-  - [7.1](#blocks--braces) Use braces with all multi-line blocks.
+  - [7.1](#blocks--braces) 使用大括号包裹所有的多行代码块。
 
     ```javascript
     // bad
@@ -563,7 +542,7 @@
     ```
 
   <a name="blocks--cuddled-elses"></a><a name="7.2"></a>
-  - [7.2](#blocks--cuddled-elses) If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block’s closing brace. eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
+  - [7.2](#blocks--cuddled-elses) 如果通过 if 和 else 使用多行代码块，把 else 放在 if 代码块关闭括号的同一行。 eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
 
     ```javascript
     // bad
@@ -589,7 +568,7 @@
 ## 控制语句
 
   <a name="control-statements"></a><a name="8.1"></a>
-  - [8.1](#control-statements) In case your control statement (`if`, `while` etc.) gets too long or exceeds the maximum line length, each (grouped) condition could be put into a new line. It’s up to you whether the logical operator should begin or end the line.
+  - [8.1](#control-statements) 如果控制语句(`if`, `while` 等等)过长，将每一组条件单独放在一行。逻辑运算符在最前或最后并不重要。
 
     ```javascript
     // bad
@@ -645,7 +624,7 @@
 ## Comments
 
   <a name="comments--multiline"></a><a name="9.1"></a>
-  - [9.1](#comments--multiline) Use `/** ... */` for multi-line comments.
+  - [9.1](#comments--multiline) 多行注释优先使用 `/** ... */`。
 
     ```javascript
     // bad
@@ -675,7 +654,7 @@
     ```
 
   <a name="comments--singleline"></a><a name="9.2"></a>
-  - [9.2](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it’s on the first line of a block.
+  - [9.2](#comments--singleline) 使用 `//` 作为单行注释。单行注释放在单独一行内。如果注释是块的第一行则不需要空白行，其他需要一个空白行。
 
     ```javascript
     // bad
@@ -713,7 +692,7 @@
     }
     ```
 
-  - (#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
+  - (#comments--spaces) 所有注释由空格开始，便于阅读。 eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
     // bad
@@ -750,10 +729,10 @@
     ```
 
   <a name="comments--actionitems"></a><a name="9.3"></a>
-  - [9.3](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
+  - [9.3](#comments--actionitems) 如果在开发中遇到问题，可以利用 `FIXME` 或 `TODO` 记录位置，便于之后做修改。
 
   <a name="comments--fixme"></a><a name="9.4"></a>
-  - [9.4](#comments--fixme) Use `// FIXME:` to annotate problems.
+  - [9.4](#comments--fixme)
 
     ```javascript
     function Calculator() {
@@ -766,7 +745,7 @@
     ```
 
   <a name="comments--todo"></a>
-  - (#comments--todo) Use `// TODO:` to annotate solutions to problems.
+  - (#comments--todo)
 
     ```javascript
     function Calculator() {
@@ -780,10 +759,10 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Whitespace
+## 空格
 
   <a name="whitespace--spaces"></a><a name="10.1"></a>
-  - [10.1](#whitespace--spaces) Use soft tabs (space character) set to 2 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
+  - [10.1](#whitespace--spaces) 两个空格为缩进. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
 
     ```javascript
     // bad
@@ -803,7 +782,7 @@
     ```
 
   <a name="whitespace--before-blocks"></a><a name="10.2"></a>
-  - [10.2](#whitespace--before-blocks) Place 1 space before the leading brace. eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html) jscs: [`requireSpaceBeforeBlockStatements`](http://jscs.info/rule/requireSpaceBeforeBlockStatements)
+  - [10.2](#whitespace--before-blocks) 在块前需要一个空格。 eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html) jscs: [`requireSpaceBeforeBlockStatements`](http://jscs.info/rule/requireSpaceBeforeBlockStatements)
 
     ```javascript
     // bad
@@ -830,7 +809,7 @@
     ```
 
   <a name="whitespace--around-keywords"></a><a name="10.3"></a>
-  - [10.3](#whitespace--around-keywords) Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space between the argument list and the function name in function calls and declarations. eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html) jscs: [`requireSpaceAfterKeywords`](http://jscs.info/rule/requireSpaceAfterKeywords)
+  - [10.3](#whitespace--around-keywords) 在控制语句(`if`, `while` 等等)的小括号前放一个空格。在函数调用及声明中，不在函数的参数列表前加空格。 eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html) jscs: [`requireSpaceAfterKeywords`](http://jscs.info/rule/requireSpaceAfterKeywords)
 
     ```javascript
     // bad
@@ -855,7 +834,7 @@
     ```
 
   <a name="whitespace--infix-ops"></a><a name="10.4"></a>
-  - [10.4](#whitespace--infix-ops) Set off operators with spaces. eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html) jscs: [`requireSpaceBeforeBinaryOperators`](http://jscs.info/rule/requireSpaceBeforeBinaryOperators), [`requireSpaceAfterBinaryOperators`](http://jscs.info/rule/requireSpaceAfterBinaryOperators)
+  - [10.4](#whitespace--infix-ops) 使用空格把运算符隔开。 eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html) jscs: [`requireSpaceBeforeBinaryOperators`](http://jscs.info/rule/requireSpaceBeforeBinaryOperators), [`requireSpaceAfterBinaryOperators`](http://jscs.info/rule/requireSpaceAfterBinaryOperators)
 
     ```javascript
     // bad
@@ -866,8 +845,7 @@
     ```
 
   <a name="whitespace--chains"></a><a name="10.5"></a>
-  - [10.5](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
-    emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
+  - [10.5](#whitespace--chains) 在使用长方法链时进行缩进。使用前面的点 . 强调这是方法调用而不是新语句。 eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
     // bad
@@ -910,7 +888,7 @@
     ```
 
   <a name="whitespace--after-blocks"></a><a name="10.6"></a>
-  - [10.6](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement. jscs: [`requirePaddingNewLinesAfterBlocks`](http://jscs.info/rule/requirePaddingNewLinesAfterBlocks)
+  - [10.6](#whitespace--after-blocks) 在块末和新语句前插入空行。 jscs: [`requirePaddingNewLinesAfterBlocks`](http://jscs.info/rule/requirePaddingNewLinesAfterBlocks)
 
     ```javascript
     // bad
@@ -968,7 +946,7 @@
     ```
 
   <a name="whitespace--padded-blocks"></a><a name="10.7"></a>
-  - [10.7](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html) jscs:  [`disallowPaddingNewlinesInBlocks`](http://jscs.info/rule/disallowPaddingNewlinesInBlocks)
+  - [10.7](#whitespace--padded-blocks) 在块内第一行和最后一行不需要空白行。 eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html) jscs:  [`disallowPaddingNewlinesInBlocks`](http://jscs.info/rule/disallowPaddingNewlinesInBlocks)
 
     ```javascript
     // bad
@@ -1001,7 +979,7 @@
     ```
 
   <a name="whitespace--in-parens"></a><a name="10.8"></a>
-  - [10.8](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html) jscs: [`disallowSpacesInsideParentheses`](http://jscs.info/rule/disallowSpacesInsideParentheses)
+  - [10.8](#whitespace--in-parens) 圆括号内不需要空格。 eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html) jscs: [`disallowSpacesInsideParentheses`](http://jscs.info/rule/disallowSpacesInsideParentheses)
 
     ```javascript
     // bad
@@ -1026,7 +1004,7 @@
     ```
 
   <a name="whitespace--in-brackets"></a><a name="10.9"></a>
-  - [10.9](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
+  - [10.9](#whitespace--in-brackets) 不要再中括号内加空格。 eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
 
     ```javascript
     // bad
@@ -1039,7 +1017,7 @@
     ```
 
   <a name="whitespace--in-braces"></a><a name="10.10"></a>
-  - [10.10](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`requireSpacesInsideObjectBrackets`](http://jscs.info/rule/requireSpacesInsideObjectBrackets)
+  - [10.10](#whitespace--in-braces) 在大括号内添加空格。 eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`requireSpacesInsideObjectBrackets`](http://jscs.info/rule/requireSpacesInsideObjectBrackets)
 
     ```javascript
     // bad
@@ -1050,9 +1028,9 @@
     ```
 
   <a name="whitespace--max-len"></a><a name="10.11"></a>
-  - [10.11](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
+  - [10.11](#whitespace--max-len) 避免过长代码。 eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
 
-    > Why? This ensures readability and maintainability.
+    > 保持代码可读性
 
     ```javascript
     // bad
@@ -1081,10 +1059,10 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Commas
+## 逗号
 
 <a name="commas--leading-trailing"></a><a name="12.1"></a>
-  - [12.1](#commas--leading-trailing) Leading commas: **Nope.** eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html) jscs: [`requireCommaBeforeLineBreak`](http://jscs.info/rule/requireCommaBeforeLineBreak)
+  - [12.1](#commas--leading-trailing) 行首不需要逗号。 eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html) jscs: [`requireCommaBeforeLineBreak`](http://jscs.info/rule/requireCommaBeforeLineBreak)
 
     ```javascript
     // bad
@@ -1118,90 +1096,12 @@
     };
     ```
 
-  <a name="commas--dangling"></a><a name="12.2"></a>
-  - [12.2](#commas--dangling) Additional trailing comma: **Yup.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
-
-    > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don’t have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
-
-    ```diff
-    // bad - git diff without trailing comma
-    var hero = {
-         firstName: 'Florence',
-    -    lastName: 'Nightingale'
-    +    lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing']
-    };
-
-    // good - git diff with trailing comma
-    var hero = {
-         firstName: 'Florence',
-         lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing'],
-    };
-    ```
-
-    ```javascript
-    // bad
-    var hero = {
-      firstName: 'Dana',
-      lastName: 'Scully'
-    };
-
-    var heroes = [
-      'Batman',
-      'Superman'
-    ];
-
-    // good
-    var hero = {
-      firstName: 'Dana',
-      lastName: 'Scully',
-    };
-
-    var heroes = [
-      'Batman',
-      'Superman',
-    ];
-
-    // bad
-    function createHero(
-      firstName,
-      lastName,
-      inventorOf
-    ) {
-      // does nothing
-    }
-
-    // good
-    function createHero(
-      firstName,
-      lastName,
-      inventorOf,
-    ) {
-      // does nothing
-    }
-
-    // bad
-    createHero(
-      firstName,
-      lastName,
-      inventorOf
-    );
-
-    // good
-    createHero(
-      firstName,
-      lastName,
-      inventorOf,
-    );
-    ```
-
 **[⬆ back to top](#table-of-contents)**
 
-## Semicolons
+## 分号
 
   <a name="semicolons--required"></a><a name="13.1"></a>
-  - [13.1](#semicolons--required) **Yup.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
+  - [13.1](#semicolons--required) 使用分号。 eslint: [`semi`](http://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
 
     ```javascript
     // bad
@@ -1219,89 +1119,10 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Type Casting & Coercion
-
-  <a name="coercion--explicit"></a><a name="14.1"></a>
-  - [14.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
-
-  <a name="coercion--strings"></a><a name="14.2"></a>
-  - [14.2](#coercion--strings)  Strings:
-
-    ```javascript
-    // => this.reviewScore = 9;
-
-    // bad
-    var totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
-
-    // bad
-    var totalScore = this.reviewScore.toString(); // isn’t guaranteed to return a string
-
-    // good
-    var totalScore = String(this.reviewScore);
-    ```
-
-  <a name="coercion--numbers"></a><a name="14.3"></a>
-  - [14.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](http://eslint.org/docs/rules/radix)
-
-    ```javascript
-    var inputValue = '4';
-
-    // bad
-    var val = new Number(inputValue);
-
-    // bad
-    var val = +inputValue;
-
-    // bad
-    var val = inputValue >> 0;
-
-    // bad
-    var val = parseInt(inputValue);
-
-    // good
-    var val = Number(inputValue);
-
-    // good
-    var val = parseInt(inputValue, 10);
-    ```
-
-  <a name="coercion--booleans"></a><a name="13.4"></a>
-  - [13.4](#coercion--booleans) Booleans:
-
-    ```javascript
-    var age = 0;
-
-    // bad
-    var hasAge = new Boolean(age);
-
-    // good
-    var hasAge = Boolean(age);
-
-    // best
-    var hasAge = !!age;
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
 ## Naming Conventions
 
-  <a name="naming--descriptive"></a><a name="15.1"></a>
-  - [15.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
-
-    ```javascript
-    // bad
-    function q() {
-      // ...
-    }
-
-    // good
-    function query() {
-      // ...
-    }
-    ```
-
   <a name="naming--camelCase"></a><a name="15.2"></a>
-  - [15.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
+  - [15.2](#naming--camelCase) 如果是函数，使用驼峰命名方式。 eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
 
     ```javascript
     // bad
@@ -1315,7 +1136,7 @@
     ```
 
   <a name="naming--PascalCase"></a><a name="15.3"></a>
-  - [15.3](#naming--PascalCase) Use PascalCase only when naming constructors or classes. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
+  - [15.3](#naming--PascalCase) 如果是构造函数，使用帕斯卡命名方式。 eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
 
     ```javascript
     // bad
@@ -1335,21 +1156,6 @@
     var good = new User({
       name: 'yup',
     });
-    ```
-
-  <a name="naming--leading-underscore"></a><a name="15.4"></a>
-  - [15.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
-
-    > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
-
-    ```javascript
-    // bad
-    this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
-    this._firstName = 'Panda';
-
-    // good
-    this.firstName = 'Panda';
     ```
 
 **[⬆ back to top](#table-of-contents)**
