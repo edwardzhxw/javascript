@@ -1,25 +1,25 @@
-# JavaScript Style Guide() {
+# JavaScript Style Guide
 
 ## Table of Contents
 
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
-  1. [Comparison Operators & Equality](#comparison-operators--equality)
-  1. [Blocks](#blocks)
-  1. [Control Statements](#control-statements)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-casting--coercion)
-  1. [Naming Conventions](#naming-conventions)
+  1. [对象](#objects)
+  1. [数组](#arrays)
+  1. [字符串](#strings)
+  1. [函数](#functions)
+  1. [属性](#properties)
+  1. [变量](#variables)
+  1. [比较运算符 & 等号](#comparison-operators--equality)
+  1. [块](#blocks)
+  1. [控制语句](#control-statements)
+  1. [注释](#comments)
+  1. [空格](#whitespace)
+  1. [逗号](#commas)
+  1. [分号](#semicolons)
+  1. [类型转化](#type-casting--coercion)
+  1. [命名规则](#naming-conventions)
 
 
-## Objects
+## 对象
 
   <a name="objects--no-new"></a><a name="1.1"></a>
   - [1.1](#objects--no-new) 使用直接量创建对象。 eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
