@@ -1,7 +1,6 @@
 # JavaScript Style Guide
 
 ## Table of Contents
-
   1. [对象](#objects)
   1. [数组](#arrays)
   1. [字符串](#strings)
@@ -19,7 +18,7 @@
   1. [命名规则](#naming-conventions)
 
 
-## 对象
+## <a name="objects">对象</a>
 
   <a name="objects--no-new"></a><a name="1.1"></a>
   - [1.1](#objects--no-new) 使用直接量创建对象。 eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
