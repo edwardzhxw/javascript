@@ -249,7 +249,7 @@
 ## 属性
   <a name="properties"></a>
   <a name="properties--dot"></a><a name="5.1"></a><a name="5.1"></a>
-  - [5.1](#properties--dot) 使用逗号来访问属性。
+  - [5.1](#properties--dot) 使用点来访问属性。
   
     eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html)
 
@@ -272,7 +272,9 @@
 
   <a name="comparison-operators--equality"></a>
   <a name="comparison--eqeqeq"></a><a name="6.1"></a>
-  - [6.1](#comparison--eqeqeq) 优先使用 `===` 和 `!==`, 而不是 `==` 和 `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
+  - [6.1](#comparison--eqeqeq) 优先使用 `===` 和 `!==`, 而不是 `==` 和 `!=`。
+    
+    eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
 
   <a name="comparison--if"></a><a name="6.2"></a>
   - [6.2](#comparison--if) 条件表达式例如 `if` 语句通过抽象方法 `ToBoolean` 强制计算它们的表达式并且总是遵守下面的规则:
@@ -281,7 +283,7 @@
     - **Undefined** 计算为 **false**
     - **Null** 计算为 **false**
     - **布尔值** 计算为 **布尔值**
-    - **数字** 如果是 **+0, -0, or NaN** 计算为 **false**, 其他则是 **true**
+    - **数字** 如果是 **+0, -0 或 NaN** 计算为 **false**, 其他则是 **true**
     - **字符串** 如果是空字符串 `''` 计算为 **false**, 其他则是 **true**
 
   <a name="comparison--shortcuts"></a><a name="6.3"></a>
@@ -520,10 +522,9 @@
 
 **[⬆ 返回顶部](#table-of-contents)**
 
-## Comments
+## 注释
 
-  <a name="comments"></a>
-  <a name="comments--multiline"></a><a name="9.1"></a>
+  <a name="comments"></a><a name="9.1"></a>
   - [9.1](#comments--multiline) 多行注释优先使用 `/** ... */`。
 
     ```javascript
@@ -694,18 +695,6 @@
     function test() {
       console.log('test');
     }
-
-    // bad
-    dog.set('attr',{
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
-    });
-
-    // good
-    dog.set('attr', {
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
-    });
     ```
 
   <a name="whitespace--around-keywords"></a><a name="10.3"></a>
@@ -762,7 +751,7 @@
       find('.selected').
         highlight().
         end().
-      find('.open').
+        find('.open').
         updateCount();
 
     // good
@@ -770,7 +759,7 @@
       .find('.selected')
         .highlight()
         .end()
-      .find('.open')
+        .find('.open')
         .updateCount();
 
     // bad
@@ -782,10 +771,11 @@
     // good
     var leds = stage.selectAll('.led')
         .data(data)
-      .enter().append('svg:svg')
+        .enter()
+        .append('svg:svg')
         .classed('led', true)
         .attr('width', (radius + margin) * 2)
-      .append('svg:g')
+        .append('svg:g')
         .attr('transform', `translate(${radius + margin},${radius + margin})`)
         .call(tron.led);
 
@@ -1041,7 +1031,7 @@
 
 **[⬆ 返回顶部](#table-of-contents)**
 
-## Naming Conventions
+## 命名方式
 
   <a name="naming--camelCase"></a><a name="14.1"></a>
   - [14.1](#naming--camelCase) 如果是函数，使用驼峰命名方式。
