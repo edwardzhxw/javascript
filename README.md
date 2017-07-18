@@ -6,7 +6,6 @@
   1. [Arrays](#arrays)
   1. [Strings](#strings)
   1. [Functions](#functions)
-  1. [Arrow Functions](#arrow-functions)
   1. [Classes & Constructors](#classes--constructors)
   1. [Modules](#modules)
   1. [Iterators and Generators](#iterators-and-generators)
