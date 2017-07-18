@@ -17,8 +17,9 @@
   1. [类型转化](#type-casting--coercion)
   1. [命名规则](#naming-conventions)
 
-## <a name="objects">对象</a>
+## 对象
 
+  <a name="objects"></a>
   <a name="objects--no-new"></a><a name="1.1"></a>
   - [1.1](#objects--no-new) 使用直接量创建对象。 eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
