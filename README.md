@@ -585,7 +585,7 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Control Statements
+## 控制语句
 
   <a name="control-statements"></a><a name="8.1"></a>
   - [8.1](#control-statements) In case your control statement (`if`, `while` etc.) gets too long or exceeds the maximum line length, each (grouped) condition could be put into a new line. It’s up to you whether the logical operator should begin or end the line.
