@@ -49,21 +49,6 @@
     };
     ```
 
-  <a name="objects--prototype-builtins"><a name="1.3"></a>
-  - [1.3](#objects--prototype-builtins) 不要直接调用`Object.prototype`的方法, 比如`hasOwnProperty`, `propertyIsEnumerable`和`isPrototypeOf`。
-
-    ```javascript
-    // bad
-    console.log(object.hasOwnProperty(key));
-
-    // good
-    console.log(Object.prototype.hasOwnProperty.call(object, key));
-
-    // best
-    const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
-    console.log(has.call(object, key));
-    ```
-
 **[⬆ back to top](#table-of-contents)**
 
 ## 数组
@@ -93,57 +78,8 @@
     someStack.push('abracadabra');
     ```
 
-  <a name="arrays--callback-return"></a><a name="2.3"></a>
-  - [2.3](#arrays--callback-return) Use return statements in array method callbacks. It’s ok to omit the return if the function body consists of a single statement returning an expression without side effects, following [8.2](#arrows--implicit-return). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
-
-    ```javascript
-    // good
-    [1, 2, 3].map((x) => {
-      var y = x + 1;
-      return x * y;
-    });
-
-    // good
-    [1, 2, 3].map(x => x + 1);
-
-    // bad
-    const flat = {};
-    [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
-      const flatten = memo.concat(item);
-      flat[index] = flatten;
-    });
-
-    // good
-    const flat = {};
-    [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
-      const flatten = memo.concat(item);
-      flat[index] = flatten;
-      return flatten;
-    });
-
-    // bad
-    inbox.filter((msg) => {
-      const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
-      } else {
-        return false;
-      }
-    });
-
-    // good
-    inbox.filter((msg) => {
-      const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
-      }
-
-      return false;
-    });
-    ```
-
-<a name="arrays--bracket-newline"><a name="2.4"></a>
-  - [2.4](#arrays--bracket-newline) Use line breaks after open and before close array brackets if an array has multiple lines
+<a name="arrays--bracket-newline"><a name="2.3"></a>
+  - [2.3](#arrays--bracket-newline) Use line breaks after open and before close array brackets if an array has multiple lines
 
   ```javascript
   // bad
